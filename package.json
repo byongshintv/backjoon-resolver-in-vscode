@@ -1,0 +1,45 @@
+{
+  "name": "backjoon-resolver",
+  "displayName": "Backjoon-resolver",
+  "description": "백준 문제 풀이를 도와주는 nodejs 소도구입니다.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.71.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:backjoon-resolver.helloWorld",
+    "onCommand:backjoon-resolver.loadProblem"
+  ],
+  "main": "./src/index.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "backjoon-resolver.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "backjoon-resolver.loadProblem",
+        "title": "문제 불러오기"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "yarn run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.71.0",
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "16.x",
+    "eslint": "^8.20.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.0.0",
+    "typescript": "^4.7.4",
+    "@vscode/test-electron": "^2.1.5"
+  }
+}
