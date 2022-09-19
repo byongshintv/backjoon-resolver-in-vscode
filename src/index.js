@@ -12,8 +12,12 @@ const loadProblem = require('./subcription/loadProblem')
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
-	context.subscriptions.push(disposable);
-	context.subscriptions.push(loadProblem);
+	// 환경변수 지정
+	process.env.EXTENSION_ID = "undefined_publisher.backjoon-resolver"
+
+	// 출력
+	context.subscriptions.push(disposable(context));
+	context.subscriptions.push(loadProblem(context));
 }
 
 // this method is called when your extension is deactivated
